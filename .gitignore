@@ -2,7 +2,6 @@
 ati_ft-docker/
 franka_docker/its_ws/src/
 realsense-docker/
-yolopipe-docker/
 
 # Ignore a specific folder (like a build or output directory)
 build/
@@ -18,6 +17,7 @@ venv/
 config.json
 
 # Ignore VS Code C++ database caches
+.vscode/
 .vscode/browse.vc.db
 *.vc.db
 

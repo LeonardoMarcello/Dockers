@@ -1,0 +1,46 @@
+services:
+  yolopipe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yolopipe:latest
+    container_name: Argus
+    user: yolopipe
+    privileged: true
+    network_mode: host
+    ipc: host
+    stdin_open: true # -i
+    tty: true        # -t
+ 
+    # > NVIDIA GPU Configuration
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    # > Environment Variables
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NO_AT_BRIDGE=1
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
+      - TF_ENABLE_ONEDNN_OPTS=0
+
+    # > Devices
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/video0:/dev/video0
+
+    # > Mounts
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /home/leo/Desktop/yolopipe-docker/data:/home/yolopipe/ros2_ws/data
+      #- /home/${USER}/.config/terminator:/home/yolopipe/.config/terminator
+      #- ~/.bash_history:/home/yolopipe/.bash_history
+      #- /home/leo/Desktop/yolopipe-docker/ros2:/home/yolopipe/ros2_ws/src
+
+    # > Commands
+    #command: ros2 launch yolo_bringup yolov11.launch.py model:=data/weights/yolov11n-pose_hand.pt input_image_topic:=/image_raw
+    command: ros2 launch mediapipe_bringup mediapipe.launch.py input_image_topic:=/image_raw
