@@ -1,0 +1,25 @@
+# Ignore independent Git repositories
+ati_ft-docker/
+franka_docker/its_ws/src/
+realsense-docker/
+yolopipe-docker/
+
+# Ignore a specific folder (like a build or output directory)
+build/
+dist/
+
+# Ignore dependency folders (like Node.js or Python packages)
+node_modules/
+__pycache__/
+venv/
+
+# Ignore a specific file (like secret API keys)
+.env
+config.json
+
+# Ignore VS Code C++ database caches
+.vscode/browse.vc.db
+*.vc.db
+
+# Ignore all files of a certain type (like log files)
+*.log

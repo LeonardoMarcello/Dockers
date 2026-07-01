@@ -1,0 +1,65 @@
+<launch>
+    <arg name="num_sensors" default="1" />
+    <arg name="com_port_hub_0" default="/dev/ttyACM0" />
+    <arg name="com_port_hub_1" default="/dev/ttyACM1" />
+
+
+    <!-- HUB 0 -->
+    <node pkg="papillarray_ros_v2" name="papillarray_ros_v2_node_hub_0" type="papillarray_ros_v2_node" output="screen">
+        <param name="hub_id" type="int" value="0"/>
+        <param name="n_sensors" type="int" value="$(eval min(arg('num_sensors'), 2))"/>
+        <param name="com_port" type="string" value="$(arg com_port_hub_0)"/>
+        <param name="baud_rate" type="int" value="9600"/>
+        <param name="parity" type="int" value="0"/>
+        <param name="byte_size" type="int" value="8"/>
+        <param name="is_flush" type="bool" value="true"/>
+        <param name="sampling_rate" type="int" value="500"/>
+    </node>
+    <node if="$(eval arg('num_sensors') >= 1)"
+        pkg="papillarray_interface" 
+        name="papillarray_interface_0_0" 
+        type="papillarray_interface_v2.py" 
+        output="screen">
+    </node>
+    <node if="$(eval arg('num_sensors') >= 2)"
+        pkg="papillarray_interface" 
+        name="papillarray_interface_0_1" 
+        type="papillarray_interface_v2.py" 
+        output="screen">
+        <param name="sensor_name" value="Hub 0 - Sensor 1" />
+        <remap from="hub_0/sensor_0" to="hub_0/sensor_1"/>
+    </node>
+
+
+    <!-- HUB 1 -->
+    <node if="$(eval arg('num_sensors') > 2)" pkg="papillarray_ros_v2" name="papillarray_ros_v2_node_hub_1" type="papillarray_ros_v2_node" output="screen">
+        <param name="hub_id" type="int" value="1"/>
+        <param name="n_sensors" type="int" value="$(eval min(arg('num_sensors') - 2, 2))"/>
+        <param name="com_port" type="string" value="$(arg com_port_hub_1)"/>
+        <param name="baud_rate" type="int" value="9600"/>
+        <param name="parity" type="int" value="0"/>
+        <param name="byte_size" type="int" value="8"/>
+        <param name="is_flush" type="bool" value="true"/>
+        <param name="sampling_rate" type="int" value="500"/>
+    </node>
+    <node if="$(eval arg('num_sensors') >= 3)"
+        pkg="papillarray_interface" 
+        name="papillarray_interface_1_0" 
+        type="papillarray_interface_v2.py" 
+        output="screen">
+        <param name="sensor_name" value="Hub 1 - Sensor 0" />
+
+        <remap from="hub_0/sensor_0" to="hub_1/sensor_0"/>
+        <remap from="/hub_0/send_bias_request" to="/hub_1/send_bias_request"/>
+    </node>
+    <node if="$(eval arg('num_sensors') >= 4)"
+        pkg="papillarray_interface" 
+        name="papillarray_interface_1_1" 
+        type="papillarray_interface_v2.py" 
+        output="screen">
+        <param name="sensor_name" value="Hub 1 - Sensor 1" />
+
+        <remap from="hub_0/sensor_0" to="hub_1/sensor_1"/>
+        <remap from="/hub_0/send_bias_request" to="/hub_1/send_bias_request"/>
+    </node>
+</launch>

@@ -1,0 +1,20 @@
+services:
+  contactile:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: papillarray_driver:latest
+    network_mode: host
+    ipc: host
+    tty: true
+    environment:
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
+      - RMW_IMPLEMENTATION=${RMW_IMPLEMENTATION:-rmw_cyclonedds_cpp}
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      #- SENSOR_COUNT = 1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    privileged: true
+    #command: roslaunch papillarray_ros_v2 papillarray.launch
+    command: roslaunch papillarray_interface papillarray_GUI.launch num_sensors:=2

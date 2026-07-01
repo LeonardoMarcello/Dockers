@@ -1,0 +1,8 @@
+prefix=/home/franka/ros1/devel
+
+Name: papillarray_ros_v2
+Description: Description of papillarray_ros_v2
+Version: 0.0.0
+Cflags: -I/home/franka/ros1/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

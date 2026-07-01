@@ -1,0 +1,10 @@
+<launch>
+    <include file="$(find papillarray_ros_v2)/launch/papillarray.launch">
+        </include>
+
+    <node pkg="papillarray_interface" 
+          name="contact_GUI_node" 
+          type="contact_GUI.py" 
+          output="screen">
+    </node>
+</launch>

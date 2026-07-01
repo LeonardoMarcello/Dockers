@@ -1,0 +1,1 @@
+/workspaces/its-docker/build/its_msgs/ament_cmake_python/its_msgs/its_msgs.egg-info/SOURCES.txt

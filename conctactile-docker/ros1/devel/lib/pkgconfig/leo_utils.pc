@@ -1,0 +1,8 @@
+prefix=/home/franka/ros1/devel
+
+Name: leo_utils
+Description: Description of leo_utils
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

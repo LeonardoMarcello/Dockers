@@ -1,0 +1,34 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/humble/include/**",
+        "/home/leo/Desktop/Dockers/ati_ft-docker/ros1/netft_rdt_driver/include/**",
+        "/home/leo/Desktop/Dockers/ati_ft-docker/ros2/src/netft_rdt_driver/include/**",
+        "/home/leo/Desktop/Dockers/conctactile-docker/ros1/src/papillarray_ros_v2/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/franka_ros/franka_control/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/franka_ros/franka_example_controllers/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/franka_ros/franka_gazebo/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/franka_ros/franka_gripper/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/franka_ros/franka_hw/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/gc_calibration/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/its/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/netft_rdt_driver/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/panda_controllers/include/**",
+        "/home/leo/Desktop/Dockers/franka_docker/its_ws/src/stiffness_deeplearning/include/**",
+        "/home/leo/Desktop/Dockers/its-docker/ros2/src/its_ros2/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ros2",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}
