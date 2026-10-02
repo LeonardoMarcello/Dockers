@@ -1,1 +1,0 @@
-/workspaces/its-docker/build/its_msgs/rosidl_typesupport_fastrtps_cpp/its_msgs/msg/detail/soft_contact_sensing_problem_solution__rosidl_typesupport_fastrtps_cpp.hpp

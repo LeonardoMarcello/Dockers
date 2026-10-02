@@ -1,1 +1,0 @@
-/workspaces/its-docker/build/its_msgs/rosidl_generator_cpp/its_msgs/msg/soft_contact_sensing_problem_solution.hpp

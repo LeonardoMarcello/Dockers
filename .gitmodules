@@ -1,0 +1,6 @@
+[submodule "ati_ft-docker"]
+	path = ati_ft-docker
+	url = https://github.com/LeonardoMarcello/ati_ft-docker.git
+[submodule "its-docker"]
+	path = its-docker
+	url = https://github.com/LeonardoMarcello/its-docker.git

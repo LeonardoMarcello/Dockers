@@ -1,1 +1,0 @@
-/workspaces/its-docker/build/its_msgs/rosidl_generator_py/its_msgs/msg/_point2_d.py

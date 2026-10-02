@@ -1,1 +1,0 @@
-/workspaces/its-docker/build/its_msgs/rosidl_typesupport_introspection_cpp/its_msgs/msg/detail/point2_d__rosidl_typesupport_introspection_cpp.hpp

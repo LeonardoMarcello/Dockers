@@ -1,1 +1,0 @@
-/workspaces/its-docker/build/its_msgs/rosidl_generator_py/its_msgs/msg/_soft_contact_sensing_problem_solution_s.c
