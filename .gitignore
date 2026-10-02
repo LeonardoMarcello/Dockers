@@ -1,7 +1,7 @@
 # Ignore independent Git repositories
 ati_ft-docker/
-franka_docker/its_ws/src/
-realsense-docker/
+# franka_docker/its_ws/src/
+# realsense-docker/
 
 # Ignore a specific folder (like a build or output directory)
 build/
@@ -23,3 +23,6 @@ config.json
 
 # Ignore all files of a certain type (like log files)
 *.log
+
+# Cronologia bash del container flexiv
+flexive_docker/docker/history/
