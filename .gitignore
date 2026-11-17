@@ -24,5 +24,3 @@ config.json
 # Ignore all files of a certain type (like log files)
 *.log
 
-# Cronologia bash del container flexiv
-flexive_docker/docker/history/

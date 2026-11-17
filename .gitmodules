@@ -6,3 +6,7 @@
 	path = its-docker
 	url = https://github.com/LeonardoMarcello/its-docker.git
 	branch = main
+[submodule "flexiv-docker"]
+	path = flexiv-docker
+	url = https://github.com/LeonardoMarcello/flexiv-docker.git
+	branch = main
